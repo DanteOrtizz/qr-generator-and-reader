@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container qr-generator">
+        <h1 class="title">Generate QR Code:</h1>
+        <div id="qr-code-generator"></div>
+        <div class="selection-container">
+            <p class="paragraph">Choose color:</p>
+            <div class="color-container">
+                <input type="color" name="" id="" class="dark">
+                <input type="color" name="" id="" class="light">
+            </div>
+            <p class="paragraph">Enter Url:</p>
+            <input type="text" name="" id="" class="url-input">
+            <div class="buttons">
+                <a href="#" class="download-btn" download="QRCode">
+                    <span>Download<img src="#" alt="download-btn" class="download-icon"></span>
+                </a>
+                <button class="share-btn">Share <img src="" alt="share-icon"></button>
+            </div>
+        </div>
+    </div>
+
+    <img src="#" alt="" class="separator">
+
+    <div class="container qr-reader">
+        <h1 class="title">Read QR Code:</h1>
+        <form action="#" class="qr-reader-form" hidden>
+            <input type="file" class="qr-input">
+            <img src="#" alt="your qr">
+            <div class="qr-reader-container">
+                <img src="#" class="upload-icon" alt="upload icon">
+                <p class="qr-text">Upload QR Code</p>
+            </div>
+        </form>
+        <textarea name="" id="" class="url-output" spellcheck="false"></textarea>
+        <button class="copy-button">Copy Address <img src="#" alt="" class="copy-icon"></button>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+</body>
+</html>
