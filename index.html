@@ -9,41 +9,45 @@
 <body>
     <div class="container qr-generator">
         <h1 class="title">Generate QR Code:</h1>
-        <div id="qr-code-generator"></div>
+        <div id="qr-code-generator">
+            <i class="inside-icon fa-solid fa-bars fa-xl" style="color: #dfe4ea;"></i>
+            <p class="qr-text">QR code will show here:</p>
+        </div>
         <div class="selection-container">
             <p class="paragraph">Choose color:</p>
             <div class="color-container">
-                <input type="color" name="" id="" class="dark">
-                <input type="color" name="" id="" class="light">
+                <input type="color" name="" id="" class="dark color">
+                <input type="color" name="" id="" class="light color">
             </div>
             <p class="paragraph">Enter Url:</p>
-            <input type="text" name="" id="" class="url-input">
+            <input type="text" name="" id="" class="url-input" placeholder="https://www.twitch.tv">
             <div class="buttons">
-                <a href="#" class="download-btn" download="QRCode">
-                    <span>Download<img src="#" alt="download-btn" class="download-icon"></span>
+                <a href="#" class="btn download-btn" download="QRCode">
+                    <span class="">Download</span><i class="icon fa-solid fa-file-arrow-down" style="color: #dfe4ea;"></i>
                 </a>
-                <button class="share-btn">Share <img src="" alt="share-icon"></button>
+                <button class="btn share-btn">Share<i class="icon fa-regular fa-share-from-square" style="color: #dfe4ea;"></i></button>
             </div>
         </div>
     </div>
 
-    <img src="#" alt="" class="separator">
+    <img src="images/round_arrow_right.png" alt="" class="separator">
 
-    <div class="container qr-reader">
+    <div class="container reader-container">
         <h1 class="title">Read QR Code:</h1>
-        <form action="#" class="qr-reader-form" hidden>
-            <input type="file" class="qr-input">
-            <img src="#" alt="your qr">
+        <form action="#" class="qr-reader-form" id="form">
+            <input type="file" class="qr-input" id="qr-input" hidden>
+            <img src="#" alt="">
             <div class="qr-reader-container">
-                <img src="#" class="upload-icon" alt="upload icon">
+                <i class="inside-icon fa-solid fa-cloud-arrow-up fa-xl" style="color: #dfe4ea;"></i>
                 <p class="qr-text">Upload QR Code</p>
             </div>
         </form>
-        <textarea name="" id="" class="url-output" spellcheck="false"></textarea>
-        <button class="copy-button">Copy Address <img src="#" alt="" class="copy-icon"></button>
+        <textarea name="" id="url-output" class="url-output" spellcheck="false" disabled></textarea>
+        <button class="btn copy-btn">Copy Address<i class="icon fa-solid fa-copy" style="color: #e0e4ea;"></i></button>
     </div>
 
     <script src="script.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <script src="https://kit.fontawesome.com/97085a24ff.js" crossorigin="anonymous"></script>
 </body>
 </html>
