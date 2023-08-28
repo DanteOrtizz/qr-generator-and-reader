@@ -3,34 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="images/qr-code.png" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
-    <title>Document</title>
+    <title>Generator & Reader</title>
 </head>
 <body>
     <div class="container qr-generator">
         <h1 class="title">Generate QR Code:</h1>
-        <div id="qr-code-generator">
-            <i class="inside-icon fa-solid fa-bars fa-xl" style="color: #dfe4ea;"></i>
-            <p class="qr-text">QR code will show here:</p>
-        </div>
+        <div id="qr-code" class="qr-code"></div>
         <div class="selection-container">
             <p class="paragraph">Choose color:</p>
             <div class="color-container">
-                <input type="color" name="" id="" class="dark color">
-                <input type="color" name="" id="" class="light color">
+                <input type="color" name="" id="dark" class="dark color">
+                <input type="color" name="" id="light" class="light color">
             </div>
             <p class="paragraph">Enter Url:</p>
-            <input type="text" name="" id="" class="url-input" placeholder="https://www.twitch.tv">
+            <input type="text" name="" id="url-input" class="url-input" placeholder="https://www.youtube.com/watch?v=f8mL0_4GeV0">
             <div class="buttons">
-                <a href="#" class="btn download-btn" download="QRCode">
+                <a href="#" id="download-btn" class="btn download-btn" download="QRCode">
                     <span class="">Download</span><i class="icon fa-solid fa-file-arrow-down" style="color: #dfe4ea;"></i>
                 </a>
-                <button class="btn share-btn">Share<i class="icon fa-regular fa-share-from-square" style="color: #dfe4ea;"></i></button>
+                <button id="share-btn" class="btn share-btn">Share<i class="icon fa-regular fa-share-from-square" style="color: #dfe4ea;"></i></button>
             </div>
         </div>
     </div>
 
-    <img src="images/round_arrow_right.png" alt="" class="separator">
+    <img src="images/round_triangle.png" alt="" srcset="" class="separator">
 
     <div class="container reader-container">
         <h1 class="title">Read QR Code:</h1>
@@ -42,7 +40,7 @@
                 <p class="qr-text">Upload QR Code</p>
             </div>
         </form>
-        <textarea name="" id="url-output" class="url-output" spellcheck="false" disabled></textarea>
+        <textarea placeholder="https:" name="" id="url-output" class="url-output" spellcheck="false" disabled></textarea>
         <button class="btn copy-btn">Copy Address<i class="icon fa-solid fa-copy" style="color: #e0e4ea;"></i></button>
     </div>
 
