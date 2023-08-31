@@ -74,7 +74,53 @@ async function generateQRCode() {
         colorDark: colorDark,
         colorLight: colorLight,
     });
-    download.href = await handleDataUrl();
+    downloadBtn.href = await resolveDataUrl();
 }
 
 generateQRCode();
+
+// Reader:
+const form = document.getElementById('qr-form');
+const qrInput = document.getElementById('qr-input');
+const urlOutput = document.getElementById('url-output');
+const copyBtn = document.getElementById('copy-btn');
+const readerContainer = document.getElementById('qr-reader-container');
+const qrText = document.getElementById('qr-text');
+
+// API: http://api.qrserver.com/v1/read-qr-code/ 
+// Docs https://goqr.me/api/doc/read-qr-code/
+
+//Event listeners:
+form.addEventListener('click', () => qrInput.click());
+copyBtn.addEventListener('click', copyToClipboard);
+
+function copyToClipboard() {
+    let address = urlOutput.textContent;
+    address.select;
+    navigator.clipboard.writeText(address);
+    //console.log(address);
+};
+
+function fetchRequest(file, formData) {
+    qrText.innerText = "Scanning QR Code...";
+    fetch("http://api.qrserver.com/v1/read-qr-code/", {
+        method: 'POST', body: formData
+    }).then(res => res.json()).then(result => {
+        result = result[0].symbol[0].data;
+        qrText.innerText = result ? "Upload QR Code To Scan" : "Couldn't Scan QR Code";
+        if (!result) return;
+        document.querySelector('textarea').innerText = result;
+        form.querySelector('.img-form').src = URL.createObjectURL(file);
+        readerContainer.classList.add("inactive"); //hiddin text for the qr code area
+    }).catch(() => {
+        qrText.innerText = "Couldn't Scan QR Code...";
+    });
+}
+
+qrInput.addEventListener("change", async e => {
+    let file = e.target.files[0];
+    if (!file) return;
+    let formData = new FormData();
+    formData.append('file', file);
+    fetchRequest(file, formData);
+});

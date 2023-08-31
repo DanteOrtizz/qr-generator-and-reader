@@ -32,16 +32,16 @@
 
     <div class="container reader-container">
         <h1 class="title">Read QR Code:</h1>
-        <form action="#" class="qr-reader-form" id="form">
+        <form action="#" class="qr-reader-form" id="qr-form">
             <input type="file" class="qr-input" id="qr-input" hidden>
-            <img src="#" alt="">
-            <div class="qr-reader-container">
+            <img src="#" alt="" class="img-form">
+            <div class="qr-reader-container" id="qr-reader-container">
                 <i class="inside-icon fa-solid fa-cloud-arrow-up fa-xl" style="color: #dfe4ea;"></i>
-                <p class="qr-text">Upload QR Code</p>
+                <p class="qr-text" id="qr-text">Upload QR Code</p>
             </div>
         </form>
-        <textarea placeholder="https:" name="" id="url-output" class="url-output" spellcheck="false" disabled></textarea>
-        <button class="btn copy-btn">Copy Address<i class="icon fa-solid fa-copy" style="color: #e0e4ea;"></i></button>
+        <textarea id="url-output" class="url-output" spellcheck="false" disabled></textarea>
+        <button class="btn copy-btn" id="copy-btn">Copy Address<i class="icon fa-solid fa-copy" style="color: #e0e4ea;"></i></button>
     </div>
 
     <script src="script.js"></script>

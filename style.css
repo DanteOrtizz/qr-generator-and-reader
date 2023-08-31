@@ -225,3 +225,7 @@ body {
 .qr-reader-container.inactive {
     display: none;
 }
+
+.content.inactive {
+    display: none;
+}
